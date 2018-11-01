@@ -1,0 +1,44 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+
+  input {
+    display: none;
+  }
+}
+
+.slider {
+  @extend %pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 400ms;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 22px;
+    left: 6px;
+    bottom: 4px;
+    background-color: white;
+    transition: 400ms;
+  }
+}
+
+input:checked + .slider {
+  background-color: $color;
+
+  &:before {
+    transform: translateX(26px);
+  }
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $color;
+}

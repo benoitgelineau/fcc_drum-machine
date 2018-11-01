@@ -1,0 +1,16 @@
+$width: 800px;
+$height: $width / 2;
+$padding: 25px;
+
+$responsive-width: $height + 2 * $padding;
+$resp-flex-box: $height - 2 * $padding;
+
+$height-sliderVol: 5px;
+$size-slider-handle: 20px;
+
+$font: 'Cabin', Arial, Helvetica, sans-serif;
+$color: #F80;
+
+%pointer {
+  cursor: pointer;
+}

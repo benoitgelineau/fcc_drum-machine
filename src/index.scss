@@ -1,0 +1,73 @@
+@import './style/helpers/variables.scss';
+@import './style/layout/Buttons.scss';
+@import './style/components/Power.scss';
+@import './style/components/Volume.scss';
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#drum-machine {
+  border: 5px solid black;
+  display: flex;
+  justify-content: space-between;
+  width: $width;
+  height: $height;
+  margin: 75px auto;
+  padding: $padding;
+  box-sizing: border-box;
+}
+
+#settings {
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid black;
+  width: 50%;
+}
+
+#power {
+  margin: 10% auto 0 auto;
+  text-align: center;
+
+  p {
+    font-family: $font;
+    font-size: 22px;
+    margin: 1%;
+  }
+}
+
+#display {
+  border: 1px solid black;
+  background-color: rgba(0,0,0,0.05);
+  width: 60%;
+  height: 25%;
+  margin: 8% auto;
+
+  p {
+    font-family: $font;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $width) {
+  #drum-machine {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    width: $responsive-width;
+    height: $width;
+  }
+  #grid,
+  #settings {
+    margin: 0 auto;
+  }
+  #grid {
+    height: $resp-flex-box;
+  }
+  #settings {
+    width: $resp-flex-box;
+    height: 45%;
+  }
+}

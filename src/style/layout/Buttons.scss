@@ -1,0 +1,32 @@
+#grid {
+  width: $height - $padding * 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.drum-pad {
+  font-family: $font;
+  font-size: 34px;
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 50%;
+  outline: none;
+  opacity: 0.2;
+
+  &.active {
+    @extend %pointer;
+    animation: fadeInOpacity 1s forwards;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0px 0px 15px black;
+  }
+}

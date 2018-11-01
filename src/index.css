@@ -1,0 +1,136 @@
+.drum-pad.active, .slider, .sliderVol::-webkit-slider-thumb {
+  cursor: pointer; }
+
+#grid {
+  width: 350px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px; }
+
+.drum-pad {
+  font-family: "Cabin", Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 50%;
+  outline: none;
+  opacity: 0.2; }
+  .drum-pad.active {
+    animation: fadeInOpacity 1s forwards; }
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0.2; }
+  100% {
+    opacity: 1;
+    box-shadow: 0px 0px 15px black; } }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px; }
+  .switch input {
+    display: none; }
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 400ms; }
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 22px;
+    left: 6px;
+    bottom: 4px;
+    background-color: white;
+    transition: 400ms; }
+
+input:checked + .slider {
+  background-color: #F80; }
+  input:checked + .slider:before {
+    transform: translateX(26px); }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #F80; }
+
+.slidecontainer {
+  width: 75%;
+  margin: 0 auto;
+  padding: 20px 0; }
+
+.sliderVol {
+  appearance: none;
+  background: #d3d3d3;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: none; }
+  .sliderVol::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #F80; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+#drum-machine {
+  border: 5px solid black;
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  height: 400px;
+  margin: 75px auto;
+  padding: 25px;
+  box-sizing: border-box; }
+
+#settings {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  width: 50%; }
+
+#power {
+  margin: 10% auto 0 auto;
+  text-align: center; }
+  #power p {
+    font-family: "Cabin", Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin: 1%; }
+
+#display {
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 60%;
+  height: 25%;
+  margin: 8% auto; }
+  #display p {
+    font-family: "Cabin", Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%; }
+
+@media only screen and (max-width: 800px) {
+  #drum-machine {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    width: 450px;
+    height: 800px; }
+  #grid,
+  #settings {
+    margin: 0 auto; }
+  #grid {
+    height: 350px; }
+  #settings {
+    width: 350px;
+    height: 45%; } }

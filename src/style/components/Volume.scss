@@ -1,0 +1,24 @@
+.slidecontainer {
+  width: 75%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.sliderVol {
+  appearance: none;
+  background: #d3d3d3;
+  width: 100%;
+  height: $height-sliderVol;
+  border-radius: $height-sliderVol;
+  margin: 0 auto;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    @extend %pointer;
+    appearance: none;
+    width: $size-slider-handle;
+    height: $size-slider-handle;
+    border-radius: 50%;
+    background: $color;
+  }
+}
